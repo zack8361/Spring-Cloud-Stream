@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 127.0.0.1:10000,127.0.0.1:10001,127.0.0.1:10002
+      function:
+        definition: basicConsumer; basicProducer
+
+      bindings:
+        basicProducer-out-0:
+          destination: spring-cloud-stream-example
+        basicConsumer-in-0:
+          destination: spring-cloud-stream-example
